@@ -1,0 +1,32 @@
+{
+    "name": "jnjxp/cdnjs",
+    "description": "tool for using cdnjs",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jake johns",
+            "email": "jake@jakejohns.net"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Jnjxp\\Cdnjs\\": "src/"
+        }
+    },
+    "require": {
+        "phly/phly-expressive-configfactory": "^1.1",
+        "zendframework/zend-servicemanager": "^3.4"
+    },
+    "extra": {
+        "zf": {
+            "config-provider": [
+                "Jnjxp\\Cdnjs\\ConfigProvider"
+            ]
+        }
+    },
+    "bin": ["bin/cdnjs"]
+}
