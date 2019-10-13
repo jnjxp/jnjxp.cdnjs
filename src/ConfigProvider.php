@@ -15,6 +15,7 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencies(),
+            'plates'       => $this->getPlatesConfig(),
         ];
     }
 
@@ -30,7 +31,17 @@ class ConfigProvider
                 Console\GenerateSri::class => Console\GenerateSriFactory::class,
                 Sri\GeneratorInterface::class => Sri\GeneratorFactory::class,
                 Sri\StorageInterface::class => Sri\StorageFactory::class,
+                Helper::class => HelperFactory::class,
             ],
+        ];
+    }
+
+    public function getPlatesConfig() : array
+    {
+        return [
+            'extensions' => [
+                Helper::class,
+            ]
         ];
     }
 }
