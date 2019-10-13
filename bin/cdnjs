@@ -23,7 +23,7 @@ if (! $autoload) {
 
 require $autoload;
 
-$project = dirname(dirname($autoload));
+$project = dirname(dirname(realpath($autoload)));
 $config  = $project . '/config/container.php';
 
 if (! file_exists($config)) {
